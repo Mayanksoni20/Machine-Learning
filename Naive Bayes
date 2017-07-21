@@ -1,0 +1,6 @@
+#Naive Bayes
+from textblob.classifiers import NaiveBayesClassifier
+tt = df3_train.apply(lambda x : (x.doc ,x.status),axis =1).tolist()
+cl = NaiveBayesClassifier(tt)
+NB_Prob = df3_validation.doc.apply(lambda x: cl.classify(x))
+df3_validation['NB_Prediction'] = NB_Prob
