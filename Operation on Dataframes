@@ -1,0 +1,2 @@
+pd.concat([df_a, df_b], axis=1)#Join along columns
+https://chrisalbon.com/python/pandas_join_merge_dataframe.html
