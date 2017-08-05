@@ -1,0 +1,3 @@
+list1=[0, 1, 2, 3, 4]
+list1.pop()#the last element "4" will be removed.
+list1.pop(0)#the first element "0" will be removed.
