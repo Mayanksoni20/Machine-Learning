@@ -1,0 +1,28 @@
+import textract
+import os
+import pandas as pd
+
+path = "/User.../"
+
+x = [] #Files to be loaded
+y = [] #Classes
+
+wd = os.listdir(path)[1:] #Working Directory
+
+for subdir in wd:
+    subdir_path = path+subdir
+    all_files = os.listdir(subdir_path)[1:]
+    for fileName in all_files:
+        try:                                       #try catch is not necessary if all the files are being read correctly
+            file_path = subdir_path +'/'+ fileName
+            all_text = textract.process(file_path)
+            domain_name.append(subdir)
+            all_resumes.append(all_text)
+        except Exception:
+            pass
+            
+df = pd.DataFrame()
+
+df['Content'] = x
+
+df['label'] = y
