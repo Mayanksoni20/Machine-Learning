@@ -1,0 +1,5 @@
+plt.figure(figsize=(25, 4))
+mean_group = train_flattened[['x','y','z']].groupby(['x'])['y'].mean()
+plt.plot(mean_group)
+plt.title('Time Series - Average')
+plt.show()
