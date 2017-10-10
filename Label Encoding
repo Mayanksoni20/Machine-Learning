@@ -1,0 +1,12 @@
+# Importing LabelEncoder and initializing it
+>> from sklearn.preprocessing import LabelEncoder
+>> le=LabelEncoder()
+# Iterating over all the common columns in train and test
+>> for col in X_test.columns.values:
+       # Encoding only categorical variables
+       if X_test[col].dtypes=='object':
+       # Using whole data to form an exhaustive list of levels
+       data=X_train[col].append(X_test[col])
+       le.fit(data.values)
+       X_train[col]=le.transform(X_train[col])
+       X_test[col]=le.transform(X_test[col])
